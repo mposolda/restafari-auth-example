@@ -11,6 +11,8 @@
         mboss.auth.authCallback = function(auth) {
             if (auth) {
                 document.write('<h1>Authenticated</h1>');
+                document.write('<a href="#" onclick="mboss.auth.logout()">Logout</a>');
+
                 document.write('<h2>Profile</h2>');
                 document.write('<ul>');
                 for (var i in mboss.auth.user) {
