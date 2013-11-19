@@ -6,9 +6,19 @@
 
   <body>
     <script>
-        var mboss = new mBoss('localhost', 8080, false);
+        var mboss = new mBoss();
+
+        var invokeStorage = function() {
+            var req = new XMLHttpRequest();
+            req.open('GET', '/storage', false);
+            req.setRequestHeader('Authorization', 'Bearer ' + mboss.auth.token);
+            req.send();
+            alert("status = " + req.status);
+        }
 
         mboss.auth.authCallback = function(auth) {
+            document.write('<a href="#" onclick="invokeStorage()">Invoke storage</a>');
+
             if (auth) {
                 document.write('<h1>Authenticated</h1>');
                 document.write('<a href="#" onclick="mboss.auth.logout()">Logout</a>');

@@ -9,10 +9,13 @@
             "value": "password"
         }
     ],
-    "defaultRoles": [ "user" ],
+    "defaultRoles": [ "user", "storage" ],
     "roles": [
         {
             "name": "user"
+        },
+        {
+            "name": "storage"
         },
         {
             "name": "admin"
