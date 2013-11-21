@@ -11,7 +11,9 @@
         var invokeStorage = function() {
             var req = new XMLHttpRequest();
             req.open('GET', '/storage', false);
-            req.setRequestHeader('Authorization', 'Bearer ' + mboss.auth.token);
+            if (mboss.auth.token) {
+                req.setRequestHeader('Authorization', 'Bearer ' + mboss.auth.token);
+            }
             req.send();
             alert("status = " + req.status);
         }
